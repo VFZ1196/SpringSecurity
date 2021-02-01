@@ -23,6 +23,7 @@ public class HomeController {
 	
 	@Autowired
 	private AuthenticationManager authenticationManager;
+	
 	@Autowired
 	private UserService userService;
 	
