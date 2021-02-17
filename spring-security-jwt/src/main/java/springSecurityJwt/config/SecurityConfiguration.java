@@ -22,7 +22,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	private UserService userService;
 	
 	@Autowired
-	private JwtFilter jwtFfilter;
+	private JwtFilter jwtFilter;
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -47,7 +47,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		    .and()
 		    .sessionManagement()
 		    .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-		http.addFilterBefore(jwtFfilter, UsernamePasswordAuthenticationFilter.class);
+		http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 	}
 
 }
